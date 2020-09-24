@@ -19,7 +19,7 @@ app.component('product-display', {
         <p v-else>Out of Stock</p>
 
         <p>Shipping: {{ shipping }}</p>
-        <product-details></product-details>
+        <product-details :details="detail"></product-details>
         <div 
           v-for="(variant, index) in variants" 
           :key="variant.id" 
@@ -36,7 +36,7 @@ app.component('product-display', {
     return {
         product: 'Socks',
         brand: 'Vue Mastery',
-        selectedVariant: 0,
+        selectedVariant: 0,      
         variants: [
           { id: 2234, color: 'green', image: './assets/images/socks_green.jpg', quantity: 50 },
           { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg', quantity: 0 },
